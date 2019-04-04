@@ -1,0 +1,26 @@
+Vultr-Cli
+https://jamesclonk.github.io/vultr/
+
+範例(1):新加坡地區，記憶體1024MB，作業系統是Ubuntu 18.04 x64
+./vultr server create -n "ubuntu1804lts" -r 40 -p 201 -o 270
+
+範例(2):新加坡地區，記憶體8192MB，作業系統是Ubuntu 18.04 x64
+./vultr server create -n "ubuntu1804lts" -r 40 -p 204 -o 270
+
+列出地區
+./vultr regions
+
+列出方案
+./vultr plans
+
+列出OS
+./vultr os
+
+Vultr API
+(1)列出OS
+curl "https://api.vultr.com/v1/os/list"
+(2)
+列出地區
+curl "https://api.vultr.com/v1/regions/list"
+(3)列出方案
+curl "https://api.vultr.com/v1/plans/list"
