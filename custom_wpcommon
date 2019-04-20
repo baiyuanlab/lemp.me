@@ -1,38 +1,13 @@
-custom_wpcommon.conf
+#custom_wpcommon.conf
 #https://wpstack.site/wp-admin/install.php
 #https://wpstack.site/wp-admin/upgrade.php
 #https://wpstack.site/xmlrpc.php
 
-# WordPress: deny wp-content/uploads nasty stuff
-location ~* ^/wp-content/uploads/.*\.(?:s?html?|php|js|swf)$ {
-        deny all;
-}
-
-# WordPress: deny wp-content/plugins (except earlier rules)
-location ~ ^/wp-content/plugins {
-#       deny all;
-}
-
-# WordPress: deny scripts and styles concat
-location ~* \/wp-admin\/load-(?:scripts|styles)\.php {
-        deny all;
-}
-
-# WordPress: deny general stuff
-#location ~* ^/(?:xmlrpc\.php|wp-links-opml\.php|wp-config\.php|wp-config-sample\.php|wp-comments-post\.php|readme\.html|license\.txt)$ {
-#       deny all;
-#}
-
 location = /xmlrpc.php {
         deny all;
         error_page 403 =404 / ;
-        access_log off;
-        log_not_found off;
-}
-
-location ~* ^/wp-content/plugins/.+\.(txt|log|md)$ {
-    deny all;
-    error_page 403 =404 / ;
+        #access_log off;
+        #log_not_found off;
 }
 
 location ^~ /wp-admin/install.php {
