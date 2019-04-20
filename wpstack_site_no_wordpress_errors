@@ -1,4 +1,11 @@
+//練習1
 function wpstack_site_no_wordpress_errors(){
   return '登入資訊輸入錯誤！基於安全性理由，不會揭露錯誤資訊項目。';
+}
+add_filter( 'login_errors', 'wpstack_site_no_wordpress_errors' );
+
+//練習2
+function wpstack_site_no_wordpress_errors(){
+  return '登入資訊輸入錯誤！基於安全性理由，不會揭露錯誤資訊項目。<br><br><h1>如果不會可以問黃羿<br><br>https://crlab.io</h1></br>';
 }
 add_filter( 'login_errors', 'wpstack_site_no_wordpress_errors' );
