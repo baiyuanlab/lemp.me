@@ -1,0 +1,4 @@
+function wpstack_site_no_wordpress_errors(){
+  return '登入資訊輸入錯誤！基於安全性理由，不會揭露錯誤資訊項目。';
+}
+add_filter( 'login_errors', 'wpstack_site_no_wordpress_errors' );
