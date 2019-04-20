@@ -4,10 +4,8 @@
 #https://wpstack.site/xmlrpc.php
 
 location = /xmlrpc.php {
-        deny all;
-        error_page 403 =404 / ;
-        #access_log off;
-        #log_not_found off;
+    deny all;
+    error_page 403 =404 / ;
 }
 
 location ^~ /wp-admin/install.php {
