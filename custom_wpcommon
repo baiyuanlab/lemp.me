@@ -1,4 +1,7 @@
 custom_wpcommon.conf
+#https://wpstack.site/wp-admin/install.php
+#https://wpstack.site/wp-admin/upgrade.php
+#https://wpstack.site/xmlrpc.php
 
 # WordPress: deny wp-content/uploads nasty stuff
 location ~* ^/wp-content/uploads/.*\.(?:s?html?|php|js|swf)$ {
