@@ -7,3 +7,8 @@
 (2)為網站安裝並啟用 Code Snippets 外掛。
 https://tw.wordpress.org/plugins/code-snippets/ (已完整台灣繁體中文本地化，這個外掛真的妙用無窮)
 https://bit.ly/2W2huxL
+
+function wpstack_site_no_wordpress_errors(){
+  return '登入資訊輸入錯誤！基於安全性理由，不會揭露錯誤資訊項目。';
+}
+add_filter( 'login_errors', 'wpstack_site_no_wordpress_errors' );
