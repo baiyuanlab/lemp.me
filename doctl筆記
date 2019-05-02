@@ -1,0 +1,1 @@
+doctl compute droplet create test-sgp1 --size 1gb --image ubuntu-18-04-x64 --region sgp1 --ssh-keys your:ssh:key
