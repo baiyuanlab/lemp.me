@@ -17,3 +17,8 @@ if [ -d $BACKUP_PATH ]; then
                 mysqldump -u $USER -p$PASSWORD --skip-lock-tables $db | bzip2 -c > $BACKUP_PATH/$db-$DATE.sql.bz2
         done
 fi
+
+
+參考
+https://ryanclouser.com/2016/09/06/MySQL-MariaDB-Backup-Script/
+https://gist.github.com/brianredbeard/8321479
