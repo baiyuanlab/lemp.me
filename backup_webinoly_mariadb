@@ -22,3 +22,5 @@ fi
 參考
 https://ryanclouser.com/2016/09/06/MySQL-MariaDB-Backup-Script/
 https://gist.github.com/brianredbeard/8321479
+https://www.linode.com/docs/databases/mysql/use-mysqldump-to-back-up-mysql-or-mariadb/
+https://www.opencli.com/linux/mysql-backup-shell-script
