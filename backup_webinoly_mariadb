@@ -1,0 +1,19 @@
+#!/bin/bash
+USER=
+PASSWORD=
+BACKUP_PATH=/root/backup
+WWW_PATH=/var/www
+DATE=`date +"%H:%M:%S:%d-%m-%Y"`
+DAYS=30
+DATABASES=`mysql -u $USER -p$PASSWORD --batch --skip-column-names -e "SHOW DATABASES;" | grep -E -v "(information|performance)_schema"`
+if [ ! -d $BACKUP_PATH ]; then
+        mkdir -p $BACKUP_PATH
+fi
+if [ -d $BACKUP_PATH ]; then
+        if [ ! -z $WWW_PATH ] && [ -d $WWW_PATH ]; then
+                tar -jcf $BACKUP_PATH/www-$DATE.tar.bz2 $WWW_PATH
+        fi
+        for db in $DATABASES; do
+                mysqldump -u $USER -p$PASSWORD --skip-lock-tables $db | bzip2 -c > $BACKUP_PATH/$db-$DATE.sql.bz2
+        done
+fi
