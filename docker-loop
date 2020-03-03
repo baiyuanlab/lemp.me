@@ -1,0 +1,23 @@
+#! /bin/bash
+
+#echo "Write Customer Donain Name:" 
+#read CDN
+echo "Input Creat Number Limit:"
+read ICNL
+
+END=$ICNL
+for i in $(seq 1 $END);
+do
+    #echo "site $i.$CDN -wp=default -cache=on";
+    #echo "site $i.$CDN -ssl=on"
+    #建立資料庫容器，容器名稱為mariadb$1，資料庫名稱為mariadb$1
+	echo -e "\033[34m Creat $i User MariaDB Initial \033[0m"
+	echo "docker run --name mariadb$i --net dockerwp -v mariadb$i:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=supersecret -e MYSQL_DATABASE=mariadb$i -e MYSQL_USER=db$iuser -e MYSQL_PASSWORD=secret -d --restart always mariadb"
+	echo -e "\033[34m Creat $i User WordPress Initial \033[0m"
+	#建立WordPress容器，名稱為wordpress$1
+	echo "docker run --name wordpress$i --net dockerwp -v wordpress$i:/var/www/html -v ~/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini -e WORDPRESS_DB_HOST=mariadb$i:3306 -e WORDPRESS_DB_NAME=mariadb$i -e WORDPRESS_DB_USER=db$iuser -e WORDPRESS_DB_PASSWORD=secret -e VIRTUAL_HOST=$i.wp365.site -e LETSENCRYPT_HOST=$i.wp365.site -e LETSENCRYPT_EMAIL=tonny.chiu@baiyuan.com.tw -d --restart always wordpress"
+
+
+    #如果要執行請將指令請將docker前的echo改為eval
+
+done
