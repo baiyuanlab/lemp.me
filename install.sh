@@ -17,3 +17,5 @@ sudo apt dist-upgrade -y
 
 #Webinoly Optimized WebServer verify
 sudo webinoly -verify
+
+#wget https://raw.githubusercontent.com/baiyuanlab/lemp.me/master/install.sh && chmod+x install.sh && ./install.sh
