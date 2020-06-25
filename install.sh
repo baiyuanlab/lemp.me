@@ -18,4 +18,7 @@ sudo apt dist-upgrade -y
 #Webinoly Optimized WebServer verify
 sudo webinoly -verify
 
+#Webinoly httpauth add default user
+sudo httpauth -add=[wp5,wp5]
+
 #wget https://raw.githubusercontent.com/baiyuanlab/lemp.me/master/install.sh && chmod+x install.sh && ./install.sh
