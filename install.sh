@@ -21,4 +21,4 @@ sudo webinoly -verify
 #Webinoly httpauth add default user
 sudo httpauth -add=[wp5,wp5]
 
-#wget https://raw.githubusercontent.com/baiyuanlab/lemp.me/master/install.sh && chmod+x install.sh && ./install.sh
+#wget https://raw.githubusercontent.com/baiyuanlab/lemp.me/master/install.sh && chmod +x install.sh && ./install.sh
