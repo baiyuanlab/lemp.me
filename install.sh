@@ -3,7 +3,7 @@ sudo timedatectl set-timezone Asia/Taipei
 sudo apt update -y
 sudo apt dist-upgrade --assume-yes
 sudo apt autoremove -y
-sudo apt install htop iotop nmap -y
+sudo apt install htop iotop nmap sysstat -y
 
 #install Webinoly Optimized WebServer
 wget -qO weby qrok.es/wy && sudo bash weby 3
