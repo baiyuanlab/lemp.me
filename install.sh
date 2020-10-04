@@ -21,9 +21,4 @@ sudo webinoly -verify
 #Webinoly httpauth add default user
 sudo httpauth -add=[wp5,wp5]
 
-sudo apt update -y
-sudo apt install software-properties-common -y
-sudo apt-add-repository --yes --update ppa:ansible/ansible
-sudo apt install ansible -y
-
 #wget https://raw.githubusercontent.com/baiyuanlab/lemp.me/master/install.sh && chmod +x install.sh && ./install.sh
