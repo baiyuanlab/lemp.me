@@ -1,5 +1,3 @@
-export VULTR_API_KEY=89dFbb91rGjkL/12zJEQxS
-
 範例(1):新加坡地區，記憶體1024MB，作業系統是Ubuntu 18.04 x64
 ./vultr server create -n "ubuntu1804lts" -r 40 -p 201 -o 270
 
