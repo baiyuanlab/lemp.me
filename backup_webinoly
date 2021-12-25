@@ -1,4 +1,0 @@
-#! /bin/bash
-cp /var/www/ /root/backup -R
-cp /etc/nginx /root/backup -R
-/usr/bin/mysqldump -uroot -p --all-databases > /root/backup/`date '+%H:%M-%m-%d-%Y'`.mysqldump_all_databases.sql
