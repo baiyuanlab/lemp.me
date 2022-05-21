@@ -1,0 +1,36 @@
+//Check if Windows Live Writer link is present in the header data.
+remove_action('wp_head', 'wlwmanifest_link');
+
+//Check if full WordPress version info is revealed in page's meta data.
+function remove_version() {
+					return '';
+				}
+			add_filter('the_generator', 'remove_version');
+
+//Check if plugins/themes file editor is enabled.
+define('DISALLOW_FILE_EDIT', true);
+
+//Check if EditURI (XML-RPC) link is present in the header data.
+remove_action('wp_head', 'rsd_link');
+add_filter('xmlrpc_enabled', '__return_false');
+
+//Check if server response headers contain X-Content-Type-Options.
+header('X-Content-Type-Options: nosniff');
+
+//Check if server response headers contain X-Frame-Options.
+header('X-Frame-Options: SAMEORIGIN');
+
+//Check if server response headers contain X-XSS-Protection.
+header('X-XSS-Protection: 1; mode=block');
+
+//Check if server response headers contain Strict-Transport-Security.
+header('Strict-Transport-Security: max-age=31536000;');
+
+//Check if server response headers contain Referrer-Policy.
+header('Referrer-Policy: same-origin');
+
+//Check if server response headers contain Permissions-Policy.
+header("Permissions-Policy: accelerometer 'none' ; ambient-light-sensor 'none' ; autoplay 'none' ; camera 'none' ; encrypted-media 'none' ; fullscreen 'none' ; geolocation 'none' ; gyroscope 'none' ; magnetometer 'none' ; microphone 'none' ; midi 'none' ; payment 'none' ; speaker 'none' ; sync-xhr 'none' ; usb 'none' ; notifications 'none' ; vibrate 'none' ; push 'none' ; vr 'none' ");
+
+//Manually Disable the Application Passwords Feature 自訂
+add_filter( 'wp_is_application_passwords_available', '__return_false' );
