@@ -1,1 +1,50 @@
+server {
+    server_name t5;
+    listen 80;
+    return 301 https://$host$request_uri;
 
+    location / {
+        proxy_pass_header Authorization;
+        proxy_pass http://10.250.44.183:80;
+        proxy_redirect   off;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Host $server_name;
+    }
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+}
+
+server {
+    server_name t5;
+    listen 443 ssl;
+
+    location / {
+        proxy_pass_header Authorization;
+        proxy_pass http://10.250.44.183:80;
+        proxy_redirect   off;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Host $server_name;
+        proxy_set_header X-Forwarded-Proto https;
+    }
+
+    # SSLstart
+    ssl_certificate /etc/letsencrypt/live/t5/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/t5/privkey.pem;
+    ssl_stapling on;
+    ssl_stapling_verify on;
+    ssl_trusted_certificate /etc/letsencrypt/live/t5/chain.pem;
+    # SSLend
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+
+}
