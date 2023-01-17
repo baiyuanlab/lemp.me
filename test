@@ -1,0 +1,15 @@
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp1s0:
+      dhcp4: no
+      addresses: [207.148.120.124/23,45.77.253.217/32]
+      nameservers:
+        addresses: [108.61.10.10]
+      routes:
+	  - to: default
+	  	via: 207.148.120.1
+      - to: 169.254.0.0/16
+        via: 207.148.120.1
+        metric: 100
